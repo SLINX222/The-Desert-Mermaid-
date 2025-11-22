@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations – The Desert Mermaid</title>
+
+  <!-- Link your CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION (copy from index.html to keep it matching) -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="cacti&amp;cakes.html">Cacti & Cakes</a></li>
+      <li><a href="contactus.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE TITLE + FORM -->
+  <h2 class="res-title">Make a Reservation</h2>
+
+  <form class="reservation-form">
+    
+    <label>Name</label>
+    <input type="text" name="name">
+
+    <label>Email Address</label>
+    <input type="email" name="email">
+
+    <div class="row">
+      <div class="col">
+        <label>Date</label>
+        <input type="date" name="date">
+      </div>
+
+      <div class="col">
+        <label>Time</label>
+        <input type="time" name="time">
+      </div>
+    </div>
+
+    <label>Number of Guests</label>
+    <input type="number" name="guests">
+
+    <label>Special Requests or Comments</label>
+    <textarea name="comments"></textarea>
+
+    <button type="submit" class="pink-btn">Submit Reservation</button>
+
+  </form>
+
+</body>
+</html>

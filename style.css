@@ -1,523 +1,308 @@
+/* =========================
+   GLOBAL BASE
+========================= */
 
 :root {
-
-  --text: #434243
-  --background: #fffef3
-  --primary: #ec35fd
-  --secondary: #f8df60
-  --accent: #ffa826
+  --text: #434243;
+  --background: #fffef3;
+  --primary: #ec35fd;
+  --secondary: #f8df60;
+  --accent: #ffa826;
 }
 
-body {
-  margin: 0;
-  padding: 50px
-  min-height 100vh;
-  text-align: center;
-  font-family:"Cabinet Grotesk Variable", serif;
-
-  /* cactus background */
-  background-image:url("images/prickley-pear-crown.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-attachment:fixed/* optional: keeps it in place */
-  color #434243
-}
-
-h1 {
-  color: #434243;
-  font-style: normal;
-}
-
-p {
-  color: #333;
-  font-size: 18px;
-  font-family: italic
-}
-
-/* === Global === */
 * {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html, body {
-  min-height: 100vh;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #d60de8;                 /* FIXED: single color only */
-  background-image: linear-gradient(to bottom, #d60de8, #90c7e3);
-  border: 1px solid #000033;
-  box-shadow: 3px 3px 3px #333;
-  color: #555;
-  font-family: 'cabinet grotesk variable,' sans-serif;
-
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "GFS Neohellenic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
 }
 
+/* === PAGE TITLE (GFS Neohellenic + colors) === */
+.site-title {
+  font-family: "GFS Neohellenic", serif;
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.title-part {
+  display: inline-block;
+  font-family: "GFS Neohellenic", serif;
+}
+
+.primary-text { color: var(--primary); }
+.accent-text { color: var(--accent); }
+.secondary-text { color: var(--secondary); }
+
+
+/* Main wrapper */
 #wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  background-color: #ffa826;
+    max-width: 100%;
+    background-color: #ffa826;
 }
 
-/* === Header === */
+/* On the menu page, don't cover the background photo */
+body.menu-page #wrapper {
+  background-color: transparent;
+}
+
+/* =========================
+   HEADER + LOGO
+========================= */
+
 header {
-  background: linear-gradient(to right, #002171, #003);
-  background-image: url(images/prickley-pear-crown.jpg);
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  justify-content: center;
-  align-items: center;
-  color: #f8df60;
-  height: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-align: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: #fff;
 }
 
-header a {
-  text-decoration: none;
+.logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem auto;
 }
 
-header a:link,
-header a:visited {
-  color: #d60de8;
-}
-
-header a:hover {
-  color: #d60de8;
-}
-
-/* ===== Navigation (no bullets, horizontal) ===== */
-nav {
-  font-size: 120%;
-  font-weight: bold;
-  padding-top: 0.75rem;
-  padding-bottom: 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style-type: none;                     /* FIXED: remove "style" */
-  margin:0;
-  padding-left:0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  max-width: 100%;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-}
-
-nav li {
-  border-bottom: 1px solid #003;
-  padding: 0.5rem 0;
-  max-width: 100%;
-  box-sizing: border-box;
-
-}
-nav li {
-  display: inline;
-  /* side-by-side links */
-  margin: 0 15px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
-}
-nav a {
-  text-decoration: none;
-}
-
-nav a:link {
-  color: #5c7fa3;
-}
-
-nav a:visited {
-  color: #344873;
-}
-
-nav a:hover {
-  color: #d60de8;
-}
-
-/* ===== Main content ===== */
-main {
-  background-color: #f8df60;
-  padding: 0.0625rem 1.25rem 1.25rem 1.875rem;
-}
-
-section {
-  padding: 1rem;
+.tagline {
+    color: #d60de8;
+    font-size: 1.1rem;
+    margin-top: 0.3rem;
 }
 
 h1 {
-  letter-spacing: 0.25em;
-  margin-bottom: 0;
-  margin-top: 0
+    margin: 0;
+    color: #434243;
+    font-weight: bold;
+    letter-spacing: 0.1em;
 }
 
-h1,
-h2,
-h3,
-footer {
-  font-family: "cabinet grotesk variable", serif;
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background: linear-gradient(to bottom, #ffffff, #90c7e3);
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    padding: 0.6rem 0;
+    text-align: center;
+}
+
+nav a {
+    color: #5c7fa3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: #d60de8;
+}
+
+/* =========================
+   HERO IMAGE (prickly pear)
+========================= */
+
+#homehero {
+    background-image: url("images/prickley-pear-crown.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 320px;
+    width: 100%;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+    background-color: #f8df60;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* On the menu page, let the photo show behind the menu box */
+body.menu-page main {
+  background-color: transparent;
 }
 
 h2 {
-  color: #d60de8;
-  text-shadow: 1px 1px 1px #ccc;
+    color: #d60de8;
+    text-shadow: 1px 1px 1px #ccc;
 }
 
-h3 {
-  color: #003;
-  color: #002171;
-}
-
-address {
-  font-style: normal;
-}
-/* ===== Footer ===== */
-footer {
-  background-color: #fff;
-  font-size: 75%;
-  font-style: italic;
-  padding: 2em;
-  text-align: center;
-  max-width: 100vw;
-  overflow-wrap: break-word;
+p {
+    color: #333;
 }
 
 .resort {
-  color: #5c7fa3;
-  font-weight: bold;
+    font-weight: bold;
+    color: #5c7fa3;
 }
 
-/* ===== Hero images (assignment: 300px, fill area) ===== */
-#homehero,
-#yurthero,
-#trailhero,
-#reservations-hero {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 18.75rem;
-}
-
-#homehero {
-  background-image: url(images/prickley-pear-crown.jpg);
-}
-
-.card-row {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 100vw;
-  box-sizing: border-box;
-  overflow: auto;
-}
-.card-row section {
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow-wrap: break-word;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 32em;
-  margin: 0 auto;
-  padding: 2em 1em;
-  background-color: #f8fafc;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-label {
-  font-weight: 600;
-  margin-bottom: 0.025em;
-  color: #003
-}
-input, 
-textarea {
-  margin-bottom: 0;
-  padding: 0.5em;
-  border: 1px solid #b0bec5;
-  border-radius: 0.25em;
-  font-size: 1em;
-  background: #fff;
-  transition: border-color 0.2s ease-in-out;
-}
-input:focus
-textarea:focus {
-  border-color: #003;
-  outline: none;
-}
-input[type="submit"] {
-  background-color: #002171;
-  color: #fff;
-  border: none;
-  border-radius: 0.25em;
-  padding: 0.75em 2em;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-input [type="sunmit"]:hover
-input [type="submit"]:focus {
-  background-color: #003;
-}
-.center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 2em;
-  gap: 0.5em;
-}
-@media (max-width: 32.5rem) {
-  body {
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    margin: 0;
-  }
-  #wrapper {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-image: none;
-    padding: 0;
-  }
-  footer {
-    padding: 1em;
-  }
-
-  #special table {
-    margin: 0 auto;
-  }
-
-  #special td, #special th {
-    display: block;
-    width: 100%
-  }
-
-  #special th {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 0.625rem;
-    border: none;
-    overflow: hidden;
-  }
-  td.package::before {
-    content: "Package: ";
-  }
-  td.description::before {
-    content: "Description: ";
-  }
-td.nights::before {
-  content: "Nights: ";
-}
-td.cost::before {
-  content: "Cost: ";
-}
-.package, .description, .nights, .cost {
-  width: 100%;
-  padding-left: 35%;
-  position: relative;
-  text-align-last: left;
-}
-td::before {
-  width: 25%;
-  display: block;
-  padding-right: 0.625rem;
-  position: absolute;
-  top: 0.375rem;
-  left: 1rem;
-  color: #39c;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-form {
-  max-width: 100%;
-  padding: 1em;
-}
-
-form label
-form input
-form textarea {
-  width: 100%;
-}
-
-input [type="submit"] {
-  width: 100%;
-  margin-top: 0.5em;
-}
-
-}
-  @media (min-width: 32.5rem) {
-  nav ul {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  nav li {
-    border-bottom: none;
-    padding: 0 1rem;
-    max-width: none;
-  }
-  .card-row {
-    flex-direction: row;
-    gap: 2rem;
-    max-width: 100vw;
-  }
-  .card-row section {
-    flex: 1 1 0;
-    max-width: 100%;
-  }
-
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Table Styles */
-Table {
-  border: 0.125rem solid #1976d2;
-  border-collapse: collapse;
-  width: 100%
-}
-
-th {
-  background-color: #1976d2;
-  color: #fff;
-}
-
-td, th {
-  border: 0.125rem solid #1976d2;
-  padding: 0.5rem;
-}
-td { text-align: center; }
-
-.text {
-    text-align: left;
-  }
-
-tr:nth-of-type(odd) {
-  background-color: #ffcd6c ;
-}
-
-@media (min-width: 1024px) {
-  /* 2-column layout like the screenshot */
-  #wrapper {
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "nav hero"
-      "nav main"
-      "footer footer";
-    grid-template-columns: 190px 1fr;
-  }
-
-  header { grid-area: header; }
-
-  nav {
-    grid-area: nav;
-    text-align: left;
-    height: 100%;
-    align-self: stretch;
-    background-image: linear-gradient(to bottom, #fff, #90c7e3);
-  }
-
-  .hero { grid-area: hero; }
-
-  main {
-    grid-area: main;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1.25rem;
-  }
-
-  footer { grid-area: footer; }
-
-  /* rubric: 1 link per line on large display */
-  nav ul { display: block; }
-  nav li { display: block; }
-}
-
-/* ===== Feature list: custom marker.gif bullets in MAIN only ===== */
 main ul {
-  list-style-image: url(images/marker.gif);
-  padding-left: 40px;
-  /* keep your indent */
+    list-style-image: url("images/marker.gif");
+    padding-left: 2.5rem;
+    text-align: left;
 }
 
 main li {
-  margin: 6px 0;
-  color: #555;
-  /* keep text gray */
+    margin: 0.5rem 0;
 }
-/* (No ::marker color needed when using list-style-image) */
 
-@media (min-width: 1024px) {
-  #wrapper {
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "nav hero"
-      "nav main"
-      "footer footer";
-    grid-template-columns: 190px 1fr;
-    align-items: stretch;
-  }
+/* =========================
+   MENU PREVIEW IMAGE
+========================= */
 
-  header { grid-area: header; }
-  nav { grid-area: nav; }
-  .hero { grid-area: hero; }
-  main { grid-area: main; }
-  footer { grid-area: footer; }
-
-  /* rubric: nav is vertical, 1 link per line */
-  nav ul { display: block; }
-  nav li { display: block; }
-
-  body {
-  background-image: linear-gradient(to bottom, #fff, #90c7e3);
-  background-repeat: no-repeat;
-  background-size: 190px 100vh;
+.menu-preview {
+    text-align: center;
+    background: #fff;
+    padding: 2rem 1rem;
 }
+
+.menu-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
 }
-/* === Top Banner (Prickly Pear Image) === */
-.banner {
-  background-image: url("images/prickley-pear-crown.jpg");
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #5c7fa3;
+}
+
+/* ===== MENU PAGE LAYOUT ===== */
+
+/* 1. Big photo background ONLY on the menu page */
+body.menu-page {
+  background-image: url("images/menu-background.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  color: #fff;             /* makes text visible over image */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-  padding: 80px 20px;      /* adjust height of banner */
+  background-attachment: fixed;
+}
+
+/* 2. Center the menu box in the middle of the page */
+.menu-layout {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* 3. Transparent box that sits on top of the photo */
+.menu-overlay {
+  background-color: rgba(255, 254, 243, 0.20); /* creamy see-through */
+  backdrop-filter: blur(3px);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 750px;   /* <<< this is what SHRINKS the menu area */
+  width: 100%;
+  text-align: center;
+}
+
+/* 4. The actual menu image inside the overlay */
+.menu-card {
+  max-width: 100%;    /* stays inside the box */
+  height: auto;
+  display: block;
+  margin: 1rem auto 0;
+  border-radius: 8px;
+}
+
+/* --- RESERVATION PAGE STYLING --- */
+
+.res-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: #434243;
+  font-weight: 700;
+}
+
+.reservation-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem 2rem 3rem 2rem;
+  background-color: #fffef3;
+}
+
+.reservation-form label {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: #434243;
+}
+
+.reservation-form input,
+.reservation-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.col {
+  flex: 1;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.pink-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #ec35fd; /* HOT PINK */
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pink-btn:hover {
+  opacity: 0.85;
 }

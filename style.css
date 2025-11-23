@@ -306,3 +306,246 @@ textarea {
 .pink-btn:hover {
   opacity: 0.85;
 }
+
+/* Background for Cacti & Cakes page */
+.cacti-cakes-background {
+    background-image: url("images/pipe_cactus_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Light overlay so text is readable */
+.cacti-cakes-background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.35); /* adjust this number to change brightness */
+    z-index: -1;
+}
+
+/* Cacti & Cakes page background */
+body.cacti-cakes-page {
+    /* cactus image + soft white overlay so text pops */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        url("images/pipe_cactus_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* optional – makes it feel “pinned” */
+}
+
+/* Optional: give the content a slightly opaque box */
+.cacti-cakes-content {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Fix gap between header/nav and content on Cacti & Cakes page */
+body.cacti-cakes-page header,
+body.cacti-cakes-page nav {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Remove top margin inside the content box */
+.cacti-cakes-content {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Remove margin from the page title */
+.cacti-cakes-content h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* ===== CACTI & CAKES PAGE OVERRIDES ===== */
+
+/* Remove ALL banners + boxes from this page */
+body.cacti-cakes-page header,
+body.cacti-cakes-page nav,
+body.cacti-cakes-page main,
+body.cacti-cakes-page footer {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Remove padding/margins that created the color sections */
+body.cacti-cakes-page header,
+body.cacti-cakes-page nav {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Full-page cactus background */
+body.cacti-cakes-page {
+    background-image: url("images/pipe_cactus_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* White content box on top of cactus background */
+.cacti-cakes-content {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Footer stays visible but transparent behind text */
+body.cacti-cakes-page .site-footer {
+    background: transparent !important;
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Lighten cactus background on Cacti & Cakes page */
+body.cacti-cakes-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.55); /* soft + bright overlay */
+    z-index: -1;
+}
+/* === Cacti & Cakes page – hero text === */
+.cacti-cakes-hero {
+  text-align: center;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+  color: #ff00b7; /* your hot pink */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.cacti-cakes-hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cacti-cakes-hero p {
+  font-size: 1rem;
+}
+
+/* === Cacti & Cakes image grid (Ghost Donkey style) === */
+/* === CACTI & CAKES GALLERY — Ghost Donkey Style (4 wide × 2 rows) === */
+
+.cacti-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.4rem;              /* tight spacing */
+    max-width: 900px;         /* keeps it smaller + centered */
+    margin: 0 auto 2rem;
+    padding: 0;
+}
+
+.cacti-gallery a {
+    display: block;
+}
+
+.cacti-gallery img {
+    width: 100%;
+    height: 170px;            /* smaller thumbnails */
+    object-fit: cover;        /* keeps composition tight */
+    border-radius: 0;         /* sharp edges */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.20);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cacti-gallery img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* Tablet – 2 across */
+@media (max-width: 900px) {
+    .cacti-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+    }
+    .cacti-gallery img {
+        height: 200px;
+    }
+}
+
+/* Mobile – 1 across */
+@media (max-width: 550px) {
+    .cacti-gallery {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    .cacti-gallery img {
+        height: 240px;
+    }
+}
+
+/* === LIGHTBOX OVERLAY === */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 1rem;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.lightbox-caption {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+}

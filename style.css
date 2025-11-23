@@ -549,3 +549,41 @@ body.cacti-cakes-page::before {
     line-height: 32px;
     text-align: center;
 }
+
+/* === INDEX PAGE OMBRÉ BACKGROUND (magenta → pink → orange → yellow) === */
+body.index-page {
+  background: linear-gradient(
+    to bottom,
+    #ec35fd 0%,   /* magenta */
+    #ff4acb 25%,  /* hot pink */
+    #ff7b4f 60%,  /* orange */
+    #f8df60 100%  /* golden yellow */
+  );
+}
+/* === INDEX PAGE: ombré background just in the main yellow section === */
+
+/* Make wrapper see-through on the index page */
+body.index-page #wrapper {
+  background-color: transparent;
+}
+
+/* Replace the solid yellow main background with the ombré */
+body.index-page main {
+  background: linear-gradient(
+    to bottom,
+    #ec35fd 0%,   /* magenta */
+    #ff4acb 25%,  /* hot pink */
+    #ff7b4f 60%,  /* orange */
+    #f8df60 100%  /* golden yellow */
+  );
+}
+
+/* === INDEX PAGE: Yellow headline color === */
+body.index-page main h2 {
+  color: #f8df60 !important;
+}
+
+/* Highlight "The Desert Mermaid" on index page */
+.index-page .resort {
+    color: #ffffff !important;
+}

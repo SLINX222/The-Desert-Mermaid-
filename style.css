@@ -1,286 +1,201 @@
-/* Google Font: GFS Neohellenic */
+/* GOOGLE FONT -------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap');
 
-/* =========================
-   GLOBAL BASE
-========================= */
-:root {
-  --text: #434243;
-  --background: #fffef3;
-  --primary: #ec35fd;
-  --secondary: #f8df60;
-  --accent: #ffa826;
-}
-
+/* GLOBAL RESET ------------------------------------------------------------- */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: "GFS Neohellenic", sans-serif;
+  color: #333;
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  font-family: "GFS Neohellenic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: var(--background);
-  color: var(--text);
+  background-color: #faf9f4;
+  line-height: 1.5;
 }
 
-/* === PAGE TITLE (GFS Neohellenic + colors) === */
-.site-title {
-  font-family: "GFS Neohellenic", serif;
-  font-size: 3rem;
-  letter-spacing: 0.08em;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
+/* HEADER ------------------------------------------------------------------- */
+.site-header {
+  background-color: #f4c430;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.title-part {
-  display: inline-block;
-  font-family: "GFS Neohellenic", serif;
-}
-
-.primary-text { color: var(--primary); }
-.accent-text { color: var(--accent); }
-.secondary-text { color: var(--secondary); }
-
-
-/* Main wrapper */
-#wrapper {
-    max-width: 100%;
-    background-color: #ffa826;
-}
-
-/* On the menu page, don't cover the background photo */
-body.menu-page #wrapper {
-  background-color: transparent;
-}
-
-/* =========================
-   HEADER + LOGO
-========================= */
-
-header {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    background-color: #fff;
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-    width: 180px;
-    height: auto;
-    display: block;
-    margin: 0 auto 0.5rem auto;
+  width: 85px;
+  height: auto;
+  border-radius: 100%;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 2.2rem;
+  color: #128C8C;
+  text-align: center;
+  margin-bottom: 0.3rem;
 }
 
 .tagline {
-    color: #d60de8;
-    font-size: 1.1rem;
-    margin-top: 0.3rem;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
 }
 
-h1 {
-    margin: 0;
-    color: #434243;
-    font-weight: bold;
-    letter-spacing: 0.1em;
+/* HAMBURGER MENU ----------------------------------------------------------- */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    background: linear-gradient(to bottom, #ffffff, #90c7e3);
-    padding: 0.5rem 0;
+.menu-bar {
+  width: 28px;
+  height: 4px;
+  background-color: #128C8C;
+  display: block;
+  margin: 5px 0;
+  border-radius: 4px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.main-nav {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 1rem 1.2rem;
+  width: 210px;
 }
 
-nav li {
-    padding: 0.6rem 0;
-    text-align: center;
+.main-nav.open {
+  display: block;
 }
 
-nav a {
-    color: #5c7fa3;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
+.main-nav ul {
+  list-style: none;
 }
 
-nav a:hover {
-    color: #d60de8;
+.main-nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0.6rem 0;
+  color: #44627A;
+  font-size: 1.05rem;
 }
 
-/* =========================
-   HERO IMAGE (prickly pear)
-========================= */
-
-#homehero {
-    background-image: url("images/prickley-pear-crown.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 320px;
-    width: 100%;
+.main-nav a:hover {
+  color: #ec35fd;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* PAGE BACKGROUNDS --------------------------------------------------------- */
 
-main {
-    background-color: #f8df60;
-    padding: 1.5rem;
-    text-align: center;
+/* INDEX PAGE — prickly pear crown background */
+body.index-page {
+  position: relative;
+  background-color: #fffef7;
 }
 
-/* On the menu page, let the photo show behind the menu box */
-body.menu-page main {
-  background-color: transparent;
-}
-
-h2 {
-    color: #d60de8;
-    text-shadow: 1px 1px 1px #ccc;
-}
-
-p {
-    color: #333;
-}
-
-.resort {
-    font-weight: bold;
-    color: #5c7fa3;
-}
-
-main ul {
-    list-style-image: url("images/marker.gif");
-    padding-left: 2.5rem;
-    text-align: left;
-}
-
-main li {
-    margin: 0.5rem 0;
-}
-
-/* =========================
-   MENU PREVIEW IMAGE
-========================= */
-
-.menu-preview {
-    text-align: center;
-    background: #fff;
-    padding: 2rem 1rem;
-}
-
-.menu-image {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #fff;
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-footer a {
-    text-decoration: none;
-    color: #5c7fa3;
-}
-
-/* ===== MENU PAGE LAYOUT ===== */
-
-/* 1. Big photo background ONLY on the menu page */
-body.menu-page {
-  background-image: url("images/menu-background.jpg");
+body.index-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/prickly-pear-crown.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  filter: blur(2px) brightness(1.25);
+  opacity: 0.55;
+  z-index: -1;
 }
 
-/* 2. Center the menu box in the middle of the page */
-.menu-layout {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* CONTENT BOX FOR HOME PAGE */
+body.index-page main {
+  max-width: 900px;
+  margin: 2.5rem auto;
   padding: 2rem;
+  background-color: rgba(255, 253, 240, 0.88);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* 3. Transparent box that sits on top of the photo */
-.menu-overlay {
-  background-color: rgba(255, 254, 243, 0.20); /* creamy see-through */
-  backdrop-filter: blur(3px);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  max-width: 750px;   /* <<< this is what SHRINKS the menu area */
-  width: 100%;
+/* SECTION TITLES ----------------------------------------------------------- */
+h2 {
+  color: #128C8C;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
   text-align: center;
 }
 
-/* 4. The actual menu image inside the overlay */
-.menu-card {
-  max-width: 100%;    /* stays inside the box */
-  height: auto;
-  display: block;
-  margin: 1rem auto 0;
-  border-radius: 8px;
+/* RESERVATION FORM --------------------------------------------------------- */
+.reservations-main {
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+  padding: 1rem 1.5rem;
 }
 
-/* --- RESERVATION PAGE STYLING --- */
-
-.res-title {
+.reservations-intro {
   text-align: center;
-  font-size: 2.5rem;
-  margin-top: 2rem;
   margin-bottom: 1.5rem;
-  color: #434243;
-  font-weight: 700;
+}
+
+.res-intro-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.res-form-heading {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .reservation-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem 2rem 3rem 2rem;
-  background-color: #fffef3;
+  background-color: rgba(255,255,255,0.9);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.reservation-form label {
+label {
+  font-weight: bold;
+  margin-top: 1rem;
   display: block;
-  font-size: 1.1rem;
-  margin-top: 1.2rem;
-  margin-bottom: 0.4rem;
-  color: #434243;
+  color: #444;
 }
 
-.reservation-form input,
-.reservation-form textarea {
+input, select, textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #ddd;
-  border-radius: 6px;
+  padding: 0.65rem;
+  margin-top: 0.4rem;
   font-size: 1rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
 }
 
+/* form layout rows */
 .row {
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .col {
@@ -288,487 +203,93 @@ body.menu-page {
 }
 
 textarea {
-  height: 150px;
+  min-height: 120px;
   resize: vertical;
 }
 
 .pink-btn {
-  width: 100%;
-  padding: 1rem;
-  margin-top: 2rem;
-  background-color: #ec35fd; /* HOT PINK */
-  border: none;
+  background-color: #ec35fd;
   color: white;
-  font-size: 1.25rem;
-  font-weight: 600;
-  border-radius: 6px;
+  border: none;
+  padding: 0.9rem 1.3rem;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .pink-btn:hover {
-  opacity: 0.85;
+  background-color: #d92ce6;
 }
 
-/* Background for Cacti & Cakes page */
-.cacti-cakes-background {
-    background-image: url("images/pipe_cactus_background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-}
-
-/* Light overlay so text is readable */
-.cacti-cakes-background::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.35); /* adjust this number to change brightness */
-    z-index: -1;
-}
-
-/* Cacti & Cakes page background */
-body.cacti-cakes-page {
-    /* cactus image + soft white overlay so text pops */
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-        url("images/pipe_cactus_background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* optional – makes it feel “pinned” */
-}
-
-/* Optional: give the content a slightly opaque box */
-.cacti-cakes-content {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-}
-
-/* Remove top margin inside the content box */
-.cacti-cakes-content {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-/* Remove margin from the page title */
-.cacti-cakes-content h2 {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-/* ===== CACTI & CAKES PAGE OVERRIDES ===== */
-
-/* Cacti & Cakes: let MAIN + FOOTER be transparent,
-   but keep the normal header/nav styles */
-body.cacti-cakes-page main,
-body.cacti-cakes-page footer {
-    background: transparent;
-    box-shadow: none;
-    border: none;
-}
-
-/* Full-page cactus background */
-body.cacti-cakes-page {
-    background-image: url("images/pipe_cactus_background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* White content box on top of cactus background */
-.cacti-cakes-content {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    text-align: center;
-}
-
-/* Footer stays visible but transparent behind text */
-body.cacti-cakes-page .site-footer {
-    background: transparent !important;
-    padding: 1.5rem 0;
-    text-align: center;
-    color: #333;
-}
-
-/* Lighten cactus background on Cacti & Cakes page */
-body.cacti-cakes-page::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.55); /* soft + bright overlay */
-    z-index: -1;
-}
-/* === Cacti & Cakes page – hero text === */
-.cacti-cakes-hero {
+/* NOTE BELOW FORM */
+.res-note {
+  margin-top: 1rem;
   text-align: center;
-  margin: 2rem auto 1rem;
-  padding: 0 1rem;
-  color: #ff00b7; /* your hot pink */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+  color: #555;
+  font-size: 0.95rem;
 }
 
-.cacti-cakes-hero h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+/* MENU PAGE BACKGROUND (yours was working fine) --------------------------- */
+body.menu-page main {
+  background-color: rgba(255,255,255,0.9);
+  padding: 2rem;
+  border-radius: 14px;
+  max-width: 950px;
+  margin: 2rem auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.cacti-cakes-hero p {
-  font-size: 1rem;
+/* IMAGE GRID (cacti and cakes, etc.) ------------------------------------- */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-/* === Cacti & Cakes image grid (Ghost Donkey style) === */
-/* === CACTI & CAKES GALLERY — Ghost Donkey Style (4 wide × 2 rows) === */
-
-.cacti-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.4rem;              /* tight spacing */
-    max-width: 900px;         /* keeps it smaller + centered */
-    margin: 0 auto 2rem;
-    padding: 0;
+/* FOOTER (optional if you add later) ------------------------------------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.cacti-gallery a {
-    display: block;
+/* UNIFIED CONTENT PANEL FOR ALL INNER PAGES ------------------------------ */
+
+/* Menu, Reservations, Cacti & Cakes, Contact Us */
+body.menu-page main,
+body.reservations-page .reservations-main,
+body.cacti-cakes-page main,
+body.contact-page main {
+  max-width: 950px;
+  margin: 2rem auto 3rem;
+  padding: 2rem;
+  background-color: rgba(255, 253, 240, 0.92); /* soft warm off-white */
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.cacti-gallery img {
-    width: 100%;
-    height: 170px;            /* smaller thumbnails */
-    object-fit: cover;        /* keeps composition tight */
-    border-radius: 0;         /* sharp edges */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.20);
-    cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.cacti-gallery img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-}
-
-/* === RESPONSIVE BREAKPOINTS === */
-
-/* Tablet – 2 across */
-@media (max-width: 900px) {
-    .cacti-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 600px;
-    }
-    .cacti-gallery img {
-        height: 200px;
-    }
-}
-
-/* Mobile – 1 across */
-@media (max-width: 550px) {
-    .cacti-gallery {
-        grid-template-columns: 1fr;
-        max-width: 350px;
-    }
-    .cacti-gallery img {
-        height: 240px;
-    }
-}
-
-/* === LIGHTBOX OVERLAY === */
-.lightbox-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 1rem;
-}
-
-.lightbox-overlay.active {
-    display: flex;
-}
-
-.lightbox-content {
-    position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
-}
-
-.lightbox-content img {
-    display: block;
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-}
-
-.lightbox-caption {
-    margin-top: 0.5rem;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #ffffff;
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 32px;
-    text-align: center;
-}
-
-/* === INDEX PAGE OMBRÉ BACKGROUND (magenta → pink → orange → yellow) === */
-body.index-page {
-  background: linear-gradient(
-    to bottom,
-    #ec35fd 0%,   /* magenta */
-    #ff4acb 25%,  /* hot pink */
-    #ff7b4f 60%,  /* orange */
-    #f8df60 100%  /* golden yellow */
-  );
-}
-/* === INDEX PAGE: ombré background just in the main yellow section === */
-
-/* Make wrapper see-through on the index page */
-body.index-page #wrapper {
-  background-color: transparent;
-}
-
-/* Replace the solid yellow main background with the ombré */
-body.index-page main {
-  background: linear-gradient(
-    to bottom,
-    #ec35fd 0%,   /* magenta */
-    #ff4acb 25%,  /* hot pink */
-    #ff7b4f 60%,  /* orange */
-    #f8df60 100%  /* golden yellow */
-  );
-}
-
-/* === INDEX PAGE: Yellow headline color === */
-body.index-page main h2 {
-  color: #f8df60 !important;
-}
-
-/* Highlight "The Desert Mermaid" on index page */
-.index-page .resort {
-    color: #ffffff !important;
-}
-
-/* =========================
-   HAMBURGER HEADER + NAV
-   (shared by all pages)
-========================= */
-
-/* Layout for the new header bar */
+/* FIX HEADER CENTERING ACROSS ALL PAGES */
 .site-header {
   display: flex;
+  justify-content: center;   /* Centers everything horizontally */
   align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  background-color: #ffffff;
+  position: relative;        /* Needed for the hamburger */
 }
 
-/* Group logo + title together */
+/* Logo + Title stay together in the center */
 .logo-title {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-/* Keep your existing logo sizing */
-.site-header .logo {
-  width: 150px;
-  height: auto;
-  margin: 0;
-}
-
-/* Stack title and tagline next to logo */
-.title-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Use your pretty colored title, but left-aligned in header */
-.site-header .site-title {
-  margin: 0;
-  font-size: 2.2rem;
-  text-align: center;
-}
-
-/* Tagline tucked under the title */
-.site-header .tagline {
-  margin-top: 0.25rem;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-/* Desktop nav layout (shows full menu) */
-.main-nav {
-  background: transparent;
-  padding: 0;
-}
-
-/* Override the generic nav list to be horizontal in the header */
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-/* Remove vertical padding from header nav items */
-.main-nav li {
-  padding: 0;
-  text-align: left;
-}
-
-/* Links inside header nav – reuse your colors */
-.main-nav a {
-  color: #5c7fa3;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.05rem;
-}
-
-.main-nav a:hover {
-  color: #d60de8;
-}
-
-/* Hamburger button – hidden on larger screens */
+/* Hamburger stays on the right without affecting centering */
 .menu-toggle {
-  display: none;               /* we turn this on for small screens */
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem;
-}
-
-/* The three lines in the hamburger */
-.menu-bar {
-  width: 22px;
-  height: 2px;
-  background-color: #434243;
-  display: block;
-}
-
-/* =========================
-   MOBILE: COLLAPSE TO HAMBURGER
-========================= */
-
-@media (max-width: 768px) {
-
-  /* Keep header on top of everything */
-  .site-header {
-    position: relative;
-  }
-
-  /* Show the hamburger button on small screens */
-  .menu-toggle {
-    display: flex;
-  }
-
-  /* Start with the menu hidden on small screens */
-  .main-nav {
-    position: absolute;
-    top: 100%;              /* directly under header */
-    right: 1rem;
-    background-color: #ffffff;
-    padding: 0.75rem 1rem;
-    border-radius: 0 0 0 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    display: none;          /* hidden until .open is added */
-    z-index: 1000;
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .main-nav li {
-    padding: 0.25rem 0;
-    text-align: left;
-  }
-
-  /* When JavaScript adds .open to .main-nav, show it */
-  .main-nav.open {
-    display: block;
-  }
-}
-
-/* =========================
-   DESERT MERMAID TOP BANNER
-========================= */
-
-/* Magenta banner background for all pages */
-.site-header {
-  background-color: #e00083; /* Magenta */
-  padding: 1.25rem 1rem;      /* Taller, professional banner look */
-  border-bottom: 4px solid #ffffff; /* Optional clean border */
-}
-
-/* Make "The Desert Mermaid" title teal inside header */
-.site-header .site-title,
-.site-header .title-part,
-.site-header .primary-text,
-.site-header .accent-text,
-.site-header .secondary-text {
-  color: #1aa39f; /* Teal */
-}
-
-/* Make tagline white for visibility */
-.site-header .tagline {
-  color: #ffffff;
-}
-
-/* =========================
-   DESERT MERMAID YELLOW BANNER
-========================= */
-
-/* Spanish Yellow banner */
-.site-header {
-  background-color: #f4c430; /* Spanish Yellow */
-  padding: 1.25rem 1rem;
-  border-bottom: 4px solid #ffffff; /* keeps it clean */
-}
-
-/* Teal Title */
-.site-header .site-title,
-.site-header .title-part,
-.site-header .primary-text,
-.site-header .accent-text,
-.site-header .secondary-text {
-  color: #1aa39f; /* Teal */
-}
-
-/* White tagline for contrast */
-.site-header .tagline {
-  color: #ffffff;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
 }

@@ -1,7 +1,9 @@
+/* Google Font: GFS Neohellenic */
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap');
+
 /* =========================
    GLOBAL BASE
 ========================= */
-
 :root {
   --text: #434243;
   --background: #fffef3;
@@ -350,13 +352,6 @@ body.cacti-cakes-page {
     border-radius: 10px;
 }
 
-/* Fix gap between header/nav and content on Cacti & Cakes page */
-body.cacti-cakes-page header,
-body.cacti-cakes-page nav {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
 /* Remove top margin inside the content box */
 .cacti-cakes-content {
     margin-top: 0;
@@ -371,21 +366,13 @@ body.cacti-cakes-page nav {
 
 /* ===== CACTI & CAKES PAGE OVERRIDES ===== */
 
-/* Remove ALL banners + boxes from this page */
-body.cacti-cakes-page header,
-body.cacti-cakes-page nav,
+/* Cacti & Cakes: let MAIN + FOOTER be transparent,
+   but keep the normal header/nav styles */
 body.cacti-cakes-page main,
 body.cacti-cakes-page footer {
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-
-/* Remove padding/margins that created the color sections */
-body.cacti-cakes-page header,
-body.cacti-cakes-page nav {
-    margin: 0 !important;
-    padding: 0 !important;
+    background: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 /* Full-page cactus background */
@@ -586,4 +573,202 @@ body.index-page main h2 {
 /* Highlight "The Desert Mermaid" on index page */
 .index-page .resort {
     color: #ffffff !important;
+}
+
+/* =========================
+   HAMBURGER HEADER + NAV
+   (shared by all pages)
+========================= */
+
+/* Layout for the new header bar */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+}
+
+/* Group logo + title together */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Keep your existing logo sizing */
+.site-header .logo {
+  width: 150px;
+  height: auto;
+  margin: 0;
+}
+
+/* Stack title and tagline next to logo */
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Use your pretty colored title, but left-aligned in header */
+.site-header .site-title {
+  margin: 0;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+/* Tagline tucked under the title */
+.site-header .tagline {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Desktop nav layout (shows full menu) */
+.main-nav {
+  background: transparent;
+  padding: 0;
+}
+
+/* Override the generic nav list to be horizontal in the header */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove vertical padding from header nav items */
+.main-nav li {
+  padding: 0;
+  text-align: left;
+}
+
+/* Links inside header nav – reuse your colors */
+.main-nav a {
+  color: #5c7fa3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.main-nav a:hover {
+  color: #d60de8;
+}
+
+/* Hamburger button – hidden on larger screens */
+.menu-toggle {
+  display: none;               /* we turn this on for small screens */
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+/* The three lines in the hamburger */
+.menu-bar {
+  width: 22px;
+  height: 2px;
+  background-color: #434243;
+  display: block;
+}
+
+/* =========================
+   MOBILE: COLLAPSE TO HAMBURGER
+========================= */
+
+@media (max-width: 768px) {
+
+  /* Keep header on top of everything */
+  .site-header {
+    position: relative;
+  }
+
+  /* Show the hamburger button on small screens */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Start with the menu hidden on small screens */
+  .main-nav {
+    position: absolute;
+    top: 100%;              /* directly under header */
+    right: 1rem;
+    background-color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: none;          /* hidden until .open is added */
+    z-index: 1000;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-nav li {
+    padding: 0.25rem 0;
+    text-align: left;
+  }
+
+  /* When JavaScript adds .open to .main-nav, show it */
+  .main-nav.open {
+    display: block;
+  }
+}
+
+/* =========================
+   DESERT MERMAID TOP BANNER
+========================= */
+
+/* Magenta banner background for all pages */
+.site-header {
+  background-color: #e00083; /* Magenta */
+  padding: 1.25rem 1rem;      /* Taller, professional banner look */
+  border-bottom: 4px solid #ffffff; /* Optional clean border */
+}
+
+/* Make "The Desert Mermaid" title teal inside header */
+.site-header .site-title,
+.site-header .title-part,
+.site-header .primary-text,
+.site-header .accent-text,
+.site-header .secondary-text {
+  color: #1aa39f; /* Teal */
+}
+
+/* Make tagline white for visibility */
+.site-header .tagline {
+  color: #ffffff;
+}
+
+/* =========================
+   DESERT MERMAID YELLOW BANNER
+========================= */
+
+/* Spanish Yellow banner */
+.site-header {
+  background-color: #f4c430; /* Spanish Yellow */
+  padding: 1.25rem 1rem;
+  border-bottom: 4px solid #ffffff; /* keeps it clean */
+}
+
+/* Teal Title */
+.site-header .site-title,
+.site-header .title-part,
+.site-header .primary-text,
+.site-header .accent-text,
+.site-header .secondary-text {
+  color: #1aa39f; /* Teal */
+}
+
+/* White tagline for contrast */
+.site-header .tagline {
+  color: #ffffff;
 }

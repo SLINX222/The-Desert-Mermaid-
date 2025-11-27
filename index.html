@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Desert Mermaid</title>
 
-  <!-- Google Font: GFS Neohellenic -->
+    <!-- Google Font: GFS Neohellenic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap" rel="stylesheet">
@@ -16,27 +16,38 @@
 <body class="index-page">
 <div id="wrapper">
 
-    <header>
-        <img src="images/logo.jpg" alt="The Desert Mermaid Logo" class="logo">
+    <!-- NEW SHARED HAMBURGER HEADER -->
+    <header class="site-header">
+        <div class="logo-title">
+            <img src="images/logo.jpg" alt="The Desert Mermaid Logo" class="logo">
+            <div class="title-block">
+                <h1 class="site-title">
+                    <span class="title-part primary-text">The</span>
+                    <span class="title-part accent-text">Desert</span>
+                    <span class="title-part secondary-text">Mermaid</span>
+                </h1>
+                <p class="tagline">Spanish Tapas • Coastal Mexican • Desert-Inspired Cuisine</p>
+            </div>
+        </div>
 
-    <h1 class="site-title">
-      <span class="title-part primary-text">The</span>
-      <span class="title-part accent-text">Desert</span>
-      <span class="title-part secondary-text">Mermaid</span>
-    </h1>
+        <!-- Hamburger button -->
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+        </button>
 
-        <p class="tagline">Spanish Tapas • Coastal Mexican • Desert-Inspired Cuisine</p>
+        <!-- Navigation links -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="cacti_and_cakes.html">Cacti and Cakes</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="cacti_and_cakes.html">Cacti and Cakes</a></li>
-            <li><a href="contactus.html">Contact Us</a></li>
-        </ul>
-    </nav>
 
     <!-- HERO IMAGE -->
     <div id="homehero"></div>
@@ -71,5 +82,18 @@
     </footer>
 
 </div>
+
+<!-- HAMBURGER TOGGLE SCRIPT -->
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+    });
+  }
+</script>
+
 </body>
 </html>

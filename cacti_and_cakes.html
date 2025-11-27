@@ -9,42 +9,75 @@
 
 <body class="cacti-cakes-page">
 
-    <!-- LOGO will go here later -->
-    <header class="logo-header"></header>
+    <!-- NEW SHARED HAMBURGER HEADER -->
+    <header class="site-header">
+      <div class="logo-title">
+        <img src="images/logo.jpg" alt="The Desert Mermaid Logo" class="logo">
 
-    <!-- NAVIGATION -->
-    <nav class="cacti-cakes-nav">
+        <div class="title-block">
+          <h1 class="site-title">
+            <span class="title-part primary-text">The</span>
+            <span class="title-part accent-text">Desert</span>
+            <span class="title-part secondary-text">Mermaid</span>
+          </h1>
+          <p class="tagline">Spanish Tapas • Coastal Mexican • Desert-Inspired Cuisine</p>
+        </div>
+      </div>
+
+      <!-- Hamburger Icon -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <nav class="main-nav">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="cacti_and_cakes.html" class="active">Cacti & Cakes</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="cacti_and_cakes.html">Cacti and Cakes</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
         </ul>
-    </nav>
+      </nav>
+    </header>
 
-<main class="cacti-main">
-  <section class="cacti-intro">
-    <h2>Cacti &amp; Cakes</h2>
-    <p>Coming soon: Sonoran-inspired desserts, cakes, and cactus-forward treats.</p>
-  </section>
+    <main class="cacti-main">
+      <section class="cacti-intro">
+        <h2>Cacti &amp; Cakes</h2>
+        <p>Coming soon: Sonoran-inspired desserts, cakes, and cactus-forward treats.</p>
+      </section>
 
-  <!-- Thumbnail grid: 2 rows, 4 images each -->
-  <section class="cacti-gallery">
-    <img src="images/royal_icing_succulents.jpg" alt="Royal icing succulent cookies">
-    <img src="images/pink_ccc.jpg" alt="Pink cactus flower cupcakes">
-    <img src="images/green_ccc.jpg" alt="Green cactus and rose cupcakes">
-    <img src="images/cactus_scenery.jpg" alt="Watercolor cactus scenery cake">
+      <!-- Cake & Cacti Gallery -->
+      <section class="cacti-gallery">
+        <img src="images/royal_icing_succulents.jpg" alt="Royal icing succulent cookies">
+        <img src="images/pink_ccc.jpg" alt="Pink cactus flower cupcakes">
+        <img src="images/green_ccc.jpg" alt="Green cactus and rose cupcakes">
+        <img src="images/cactus_scenery.jpg" alt="Watercolor cactus scenery cake">
 
-    <img src="images/cactus_and_lime_cake.jpg" alt="Cactus and lime decorated cake">
-    <img src="images/barrel_cactus.jpg" alt="Naked cake topped with barrel cactus">
-    <img src="images/2_cake_up_close.jpg" alt="Close up of cactus succulent cake">
-    <img src="images/2_cakes.jpg" alt="Two tall succulent cakes on stands">
-  </section>
-</main>
+        <img src="images/cactus_and_lime_cake.jpg" alt="Cactus and lime decorated cake">
+        <img src="images/barrel_cactus.jpg" alt="Naked cake topped with barrel cactus">
+        <img src="images/2_cake_up_close.jpg" alt="Close up of cactus succulent cake">
+        <img src="images/2_cakes.jpg" alt="Two tall succulent cakes on stands">
+      </section>
+    </main>
 
     <footer class="site-footer">
         <p>&copy; 2025 The Desert Mermaid</p>
     </footer>
+
+    <!-- HAMBURGER MENU SCRIPT -->
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('.main-nav');
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+          mainNav.classList.toggle('open');
+        });
+      }
+    </script>
 
 </body>
 </html>

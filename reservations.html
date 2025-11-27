@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,51 +9,178 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="reservations-page">
 
-  <!-- NAVIGATION (copy from index.html to keep it matching) -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="reservations.html">Reservations</a></li>
-      <li><a href="cacti_and_cakes.html">Cacti and Cakes</a></li>
-      <li><a href="contactus.html">Contact Us</a></li>
-    </ul>
-  </nav>
-
-  <!-- PAGE TITLE + FORM -->
-  <h2 class="res-title">Make a Reservation</h2>
-
-  <form class="reservation-form">
-    
-    <label>Name</label>
-    <input type="text" name="name">
-
-    <label>Email Address</label>
-    <input type="email" name="email">
-
-    <div class="row">
-      <div class="col">
-        <label>Date</label>
-        <input type="date" name="date">
-      </div>
-
-      <div class="col">
-        <label>Time</label>
-        <input type="time" name="time">
+  <!-- SHARED HAMBURGER HEADER -->
+  <header class="site-header">
+    <div class="logo-title">
+      <img src="images/logo.jpg" alt="The Desert Mermaid Logo" class="logo">
+      <div class="title-block">
+        <h1 class="site-title">
+          <span class="title-part primary-text">The</span>
+          <span class="title-part accent-text">Desert</span>
+          <span class="title-part secondary-text">Mermaid</span>
+        </h1>
+        <p class="tagline">Spanish Tapas • Coastal Mexican • Desert-Inspired Cuisine</p>
       </div>
     </div>
 
-    <label>Number of Guests</label>
-    <input type="number" name="guests">
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
 
-    <label>Special Requests or Comments</label>
-    <textarea name="comments"></textarea>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="cacti_and_cakes.html">Cacti and Cakes</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <button type="submit" class="pink-btn">Submit Reservation</button>
+  <!-- PAGE CONTENT -->
+  <main class="reservations-main">
 
-  </form>
+    <!-- Intro text, Taco Guild–style vibe -->
+    <section class="reservations-intro">
+      <h2 class="res-title">Group Reservations &amp; Private Parties</h2>
+      <p class="res-intro-text">
+        Whether it’s a birthday, baby shower, office function, or any other special event,
+        please fill out the form below and The Desert Mermaid team will do our best to
+        accommodate your preferred date and any requests that will make your
+        celebration memorable.
+      </p>
+    </section>
+
+    <!-- Party request form -->
+    <form class="reservation-form">
+
+      <h3 class="res-form-heading">Tell us about your party</h3>
+
+      <div class="row">
+        <div class="col">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name">
+        </div>
+
+        <div class="col">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="col">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date">
+        </div>
+
+        <div class="col">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="time">
+        </div>
+      </div>
+
+      <label for="duration">Estimated Duration (optional)</label>
+      <input type="text" id="duration" name="duration" placeholder="e.g. 2–3 hours">
+
+      <!-- Occasion dropdown -->
+      <label for="occasion">Select Occasion</label>
+      <select id="occasion" name="occasion">
+        <option value="">Please select one</option>
+        <option>Anniversary</option>
+        <option>Baby Shower</option>
+        <option>Bachelor Party</option>
+        <option>Bachelorette Party</option>
+        <option>Bar Mitzvah</option>
+        <option>Bat Mitzvah</option>
+        <option>Birthday</option>
+        <option>Bridal Shower</option>
+        <option>Business / Office / Corporate Function</option>
+        <option>Family Reunion</option>
+        <option>Graduation</option>
+        <option>Holiday Party</option>
+        <option>Quinceañera</option>
+        <option>Rehearsal Dinner</option>
+        <option>Memorial / Celebration of Life</option>
+        <option>Retirement</option>
+        <option>Wedding</option>
+        <option>Other</option>
+      </select>
+
+      <!-- Space preference dropdown -->
+      <label for="space">Space Preference</label>
+      <select id="space" name="space">
+        <option value="">Please select one</option>
+        <option>Full buyout of main dining area</option>
+        <option>Table in main dining area</option>
+        <option>Semi-private room or nook</option>
+        <option>Patio</option>
+        <option>Full restaurant buyout</option>
+        <option>No preference / not sure yet</option>
+      </select>
+
+      <!-- Guests -->
+      <label for="guests">Estimated Number of Guests</label>
+      <input type="number" id="guests" name="guests" min="1">
+
+      <!-- How did you hear about us -->
+      <label for="referral">How did you hear about us?</label>
+      <select id="referral" name="referral">
+        <option value="">Please select one</option>
+        <option>Friend or family</option>
+        <option>Social media</option>
+        <option>Online search</option>
+        <option>Hotel or local business recommendation</option>
+        <option>Walked by / neighborhood</option>
+        <option>Event or catering</option>
+        <option>Other</option>
+      </select>
+
+      <!-- Details -->
+      <label for="comments">Special requests or event details</label>
+      <textarea id="comments" name="comments"
+        placeholder="Menu preferences, dietary needs, décor ideas, entertainment, or any other details."></textarea>
+
+      <button type="submit" class="pink-btn">Submit Party Request</button>
+
+      <p class="res-note">
+        A member of our events team will review your request and follow up by email
+        within 24–48 hours with availability and next steps.
+      </p>
+
+    </form>
+
+  </main>
+
+  <!-- HAMBURGER TOGGLE SCRIPT -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+    }
+  </script>
 
 </body>
 </html>
+
